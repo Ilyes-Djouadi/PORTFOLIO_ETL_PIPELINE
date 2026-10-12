@@ -2,6 +2,10 @@ import certifi
 import pandas as pd
 import duckdb
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def nettoyer_donnees(df: pd.DataFrame) -> pd.DataFrame:
     """Transformation : normalisation de la colonne d'identification."""
@@ -11,7 +15,7 @@ def nettoyer_donnees(df: pd.DataFrame) -> pd.DataFrame:
 
 def run_pipeline() -> None:
     print("[ETAPE 1] EXTRACT (NoSQL) : Connexion a MongoDB Atlas...")
-    uri = "mongodb+srv://ilyesdjouadi1_db_user:TON_MOT_DE_PASSE@data-bootcamp.ag8yf2o.mongodb.net/?appName=Data-Bootcamp"
+    uri = os.environ["MONGODB_URI"]
     
     try:
         client: MongoClient = MongoClient(uri, tlsCAFile=certifi.where(), serverSelectionTimeoutMS=2000)
