@@ -30,6 +30,6 @@ jobs:
 
     - name: Lancement des tests avec Pytest
       env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        MONGODB_URI: ${{ secrets.MONGODB_URI }}
       run: |
         pytest
