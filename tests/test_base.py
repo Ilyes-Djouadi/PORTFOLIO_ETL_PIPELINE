@@ -1,6 +1,6 @@
 import pandas as pd
 
-from etl_pipeline import nettoyer_donnees
+from src.etl_pipeline import nettoyer_donnees
 
 
 def test_nettoyer_donnees():
