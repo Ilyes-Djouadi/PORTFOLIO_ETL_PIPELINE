@@ -1,5 +1,7 @@
 import pandas as pd
+
 from etl_pipeline import nettoyer_donnees
+
 
 def test_nettoyer_donnees():
     df_brouillon = pd.DataFrame([{"_id": "France", "total_clients": 150}])
