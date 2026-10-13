@@ -42,7 +42,7 @@ def run_pipeline() -> None:
         
         print("[SUCCES] Pipeline execute avec succes.")
         
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:  
         print(f"[ALERTE] Execution bloquee (Normal en CI/CD) : {e}")
         raise
 
