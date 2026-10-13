@@ -1,5 +1,4 @@
 import pandas as pd
-
 from src.etl_pipeline import nettoyer_donnees
 
 
