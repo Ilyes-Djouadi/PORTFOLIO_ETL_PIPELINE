@@ -1,9 +1,10 @@
-import certifi
-import pandas as pd
-import duckdb
-from pymongo import MongoClient
 import os
+
+import certifi
+import duckdb
+import pandas as pd
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 
@@ -41,8 +42,9 @@ def run_pipeline() -> None:
         
         print("[SUCCES] Pipeline execute avec succes.")
         
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[ALERTE] Execution bloquee (Normal en CI/CD) : {e}")
+        raise
 
 if __name__ == "__main__":
     run_pipeline()
